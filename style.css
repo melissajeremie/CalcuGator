@@ -1,0 +1,12 @@
+body {
+  font-family: verdana;
+  background-color: gold;
+}
+
+#container {
+  width:1000px;
+  height: 750px;
+  margin: auto;
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+}
