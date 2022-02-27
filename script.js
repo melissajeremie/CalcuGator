@@ -2,7 +2,7 @@ class Calculator {
     constructor( previousInputText, currentInputText) {
         this.previousInputText = previousInputText
         this.currentInputText = currentInputText
-        this.clear()
+        this.allClear()
     }
 
     allClear(){
@@ -16,7 +16,8 @@ class Calculator {
     }
 
     appendNumber(number) {
-
+        if(number === '.' && this.currentInput.includes('.')) return
+        this.currentInput = this.currentInput.toString() + number.toString();
     }
 
     chooseOperation(operation) {
@@ -28,7 +29,7 @@ class Calculator {
     }
 
     updateDisplay() {
-
+        this.currentInputText.innerText = this.currentInput
     }
 }
 
@@ -41,3 +42,10 @@ const previousInputText= document.querySelector('[data-previous-input]');
 const currentInputText= document.querySelector('[data-current-input]');
 
 const calculator = new Calculator(previousInputText, currentInputText)
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    } )
+})
