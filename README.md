@@ -1,2 +1,2 @@
 # CalcuGator
-Alligator calculator
+Let's crunch some numbers.
